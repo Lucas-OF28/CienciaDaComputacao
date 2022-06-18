@@ -1,0 +1,63 @@
+INSERT INTO Produto( Nome, Fornecedor, Descrição,  Valor) VALUES('Bicicleta', 'Sense', 'Vermelha', '1000.00');
+INSERT INTO Produto( Nome, Fornecedor, Descrição,  Valor) VALUES('Mouse', 'Advance', 'Verde', '800.00');
+INSERT INTO Produto( Nome, Fornecedor, Descrição,  Valor) VALUES('Cobertor', 'Confort', 'Azul', '50.00');
+INSERT INTO Produto( Nome, Fornecedor, Descrição,  Valor) VALUES('Air Frier', 'Philips', 'Preta', '500.00');
+INSERT INTO Produto( Nome, Fornecedor, Descrição,  Valor) VALUES('Poltrona', 'Lazy', 'Marrom', '100.00');
+
+INSERT INTO Fornecedor(Nome, CNPJ, Email, Telefone, Inscrição Estadual, NF) VALUES('Sense', '67.388.268/0001-13', 'Sense@gmail.com','(99)9999-9999','02323355-6','3849328');
+INSERT INTO Fornecedor(Nome, CNPJ, Email, Telefone, Inscrição Estadual, NF) VALUES('Advance', '67.388.268/0001-13', 'Advance@gmail.com','(99)9999-9999','02323355-6','3849328');
+INSERT INTO Fornecedor(Nome, CNPJ, Email, Telefone, Inscrição Estadual, NF) VALUES('Confort', '67.388.268/0001-13', 'Confort@gmail.com','(99)9999-9999','02323355-6','3849328');
+INSERT INTO Fornecedor(Nome, CNPJ, Email, Telefone, Inscrição Estadual, NF) VALUES('Philips', '67.388.268/0001-13', 'Philips@gmail.com','(99)9999-9999','02323355-6','3849328');
+INSERT INTO Fornecedor(Nome, CNPJ, Email, Telefone, Inscrição Estadual, NF) VALUES('Lazy', '67.388.268/0001-13', 'Lazy@gmail.com','(99)9999-9999','02323355-6','3849328');
+
+INSERT INTO Vendedor(Nome,Comissão por venda) VALUES('Fabiano','5');
+INSERT INTO Vendedor(Nome,Comissão por venda) VALUES('Sandro','3');
+INSERT INTO Vendedor(Nome,Comissão por venda) VALUES('Junior','2');
+INSERT INTO Vendedor(Nome,Comissão por venda) VALUES('Moraes','7');
+INSERT INTO Vendedor(Nome,Comissão por venda) VALUES('Italo','11');
+
+INSERT INTO Cliente(Nome, CPF, RG, Email, Telefone) VALUES('Claudio','134.244.156-53','2.202-4','claudioo@gmail.com','(99)9999-9999');
+INSERT INTO Cliente(Nome, CPF, RG, Email, Telefone) VALUES('Marcio','134.244.156-53','2.202-4','marcio@gmail.com','(99)9999-9999');
+INSERT INTO Cliente(Nome, CPF, RG, Email, Telefone) VALUES('Vanderlei','134.244.156-53','2.202-4','vandinho@gmail.com','(99)9999-9999');
+INSERT INTO Cliente(Nome, CPF, RG, Email, Telefone) VALUES('Vanderson','134.244.156-53','2.202-4','vander@gmail.com','(99)9999-9999');
+INSERT INTO Cliente(Nome, CPF, RG, Email, Telefone) VALUES('Claudemiro','134.244.156-53','2.202-4','claudemirooo@gmail.com','(99)9999-9999');
+ 
+INSERT INTO Categoria(Nome categoria) VALUES('Escritorio');
+INSERT INTO Categoria(Nome categoria) VALUES('Lazer');
+INSERT INTO Categoria(Nome categoria) VALUES('Computador');
+INSERT INTO Categoria(Nome categoria) VALUES('Acessorios');
+INSERT INTO Categoria(Nome categoria) VALUES('Notebooks');
+
+INSERT INTO Endereço(Rua,Numero) VALUES('avenida centenario','98');
+INSERT INTO Endereço(Rua,Numero) VALUES('principal','98');
+INSERT INTO Endereço(Rua,Numero) VALUES('rua euclides','98');
+INSERT INTO Endereço(Rua,Numero) VALUES('rua dona miranda','98');
+INSERT INTO Endereço(Rua,Numero) VALUES('rua ipanema','98');
+
+INSERT INTO Bairro(Nome) VALUES('Centro');
+INSERT INTO Bairro(Nome) VALUES('Cidade Alta);
+INSERT INTO Bairro(Nome) VALUES('Congonha');
+INSERT INTO Bairro(Nome) VALUES('Bairro Estreito');
+INSERT INTO Bairro(Nome) VALUES('Forquilhinhas');
+
+INSERT INTO Cidade(Nome) VALUES('Criciúma');
+INSERT INTO Cidade(Nome) VALUES('Forquilhinha');
+INSERT INTO Cidade(Nome) VALUES('Tubarão');
+INSERT INTO Cidade(Nome) VALUES('Meleiro');
+INSERT INTO Cidade(Nome) VALUES('São José');
+
+INSERT INTO Estado(Nome) VALUES('Santa Catarina');
+INSERT INTO Estado(Nome) VALUES('Acre');
+INSERT INTO Estado(Nome) VALUES('Bahia');
+INSERT INTO Estado(Nome) VALUES('Rio Grande do Sul');
+INSERT INTO Estado(Nome) VALUES('Paraná');
+
+select * from Produto
+select * from Fornecedor
+select * from Vendedor
+select * from Cliente
+select * from Categoria
+select * from Endereço
+select * from Bairro
+select * from Cidade
+select * from Estado

@@ -1,0 +1,47 @@
+INSERT INTO Cliente (Nome, Email, CPF, Telefone) VALUES ('Lucas', 'lucas@gmail.com', '12345678915', '48996650636');
+INSERT INTO Cliente (Nome, Email, CPF, Telefone) VALUES ('Jean', 'jean@gmail.com', '75689432512', '51896531245');
+INSERT INTO Cliente (Nome, Email, CPF, Telefone) VALUES ('Márcio', 'marcio@gmail.com', '50369874123', '48569878969');
+INSERT INTO Cliente (Nome, Email, CPF, Telefone) VALUES ('Jailson', 'jailson@gmail.com', '69850456789', '47785694512');
+INSERT INTO Cliente (Nome, Email, CPF, Telefone) VALUES ('Kleber', 'kleber@gmail.com', '78546932510', '48898989897');
+
+INSERT INTO Compra (formaDePagamento,diaDaCompra,Cliente_idCliente,Caixa_idCaixa) VALUES ('debito','05/02/2021','1','1');
+INSERT INTO Compra (formaDePagamento,diaDaCompra,Cliente_idCliente,Caixa_idCaixa) VALUES ('a vista','26/06/2021','6','1');
+INSERT INTO Compra (formaDePagamento,diaDaCompra,Cliente_idCliente,Caixa_idCaixa) VALUES ('a vista','02/06/2021','5','2');
+INSERT INTO Compra (formaDePagamento,diaDaCompra,Cliente_idCliente,Caixa_idCaixa) VALUES ('a vista','04/06/2021','7','1');
+INSERT INTO Compra (formaDePagamento,diaDaCompra,Cliente_idCliente,Caixa_idCaixa) VALUES ('a vista','05/06/2021','2','2');
+
+INSERT INTO Pedido (Quantidade,Valor,Desconto,Compra_id,Produto_idProduto) VALUES ('10','9.99','00.00','80','4');
+INSERT INTO Pedido (Quantidade,Valor,Desconto,Compra_id,Produto_idProduto) VALUES ('80','10.50','1.50','90','9');
+INSERT INTO Pedido (Quantidade,Valor,Desconto,Compra_id,Produto_idProduto) VALUES ('60','80.00','00.80','100','8');
+INSERT INTO Pedido (Quantidade,Valor,Desconto,Compra_id,Produto_idProduto) VALUES ('7','5.50','00.50','110','10');
+INSERT INTO Pedido (Quantidade,Valor,Desconto,Compra_id,Produto_idProduto) VALUES ('5','4.10','00.00','112','5');
+
+INSERT INTO Caixa (Senha,Operador) VALUES ('7777','Lucas');
+INSERT INTO Caixa (Senha,Operador) VALUES ('8989','Jean');
+INSERT INTO Caixa (Senha,Operador) VALUES ('5555','Márcio');
+INSERT INTO Caixa (Senha,Operador) VALUES ('6666','Jailson');
+INSERT INTO Caixa (Senha,Operador) VALUES ('4444','Kleber');
+
+INSERT INTO Fornecedor (Nome,CNPJ,Telefone,Email) VALUES ('Robson', '48999555555', 'robson@gmail.com');
+INSERT INTO Fornecedor (Nome,CNPJ,Telefone,Email) VALUES ('Gabriel', '48999555555', 'gabriel@gmail.com');
+INSERT INTO Fornecedor (Nome,CNPJ,Telefone,Email) VALUES ('Andreia', '48999555555', 'andreia@gmail.com');
+INSERT INTO Fornecedor (Nome,CNPJ,Telefone,Email) VALUES ('Clara', '48999555555', 'clara@gmail.com');
+INSERT INTO Fornecedor (Nome,CNPJ,Telefone,Email) VALUES ('Bibiane', '48999555555', 'bibiane@gmail.com');
+
+INSERT INTO Produto (Nome,codigoDeBarras,Marca,Valor,Validade,Categoria_idCategoria) VALUES ('Pizza','Seara','12354654134156','19.99','28/07/2021','2');
+INSERT INTO Produto (Nome,codigoDeBarras,Marca,Valor,Validade,Categoria_idCategoria) VALUES ('Escova de dente','Colgate','45786521546987','7.80',null, '1');
+INSERT INTO Produto (Nome,codigoDeBarras,Marca,Valor,Validade,Categoria_idCategoria) VALUES ('Cerveja Puro Malte','Brahma','78542365987412','49.50','28/06/2022','3');
+INSERT INTO Produto (Nome,codigoDeBarras,Marca,Valor,Validade,Categoria_idCategoria) VALUES ('Coleira','ZeeDog','12345643254631','140.20','null','4');
+INSERT INTO Produto (Nome,codigoDeBarras,Marca,Valor,Validade,Categoria_idCategoria) VALUES ('Biscoito','Trakinas','45698741326548','8,80','29/07/2022','5');
+
+INSERT INTO Categoria (Categoria) VALUES ('Higiene');
+INSERT INTO Categoria (Categoria) VALUES ('Frios');
+INSERT INTO Categoria (Categoria) VALUES ('Bebidas');
+INSERT INTO Categoria (Categoria) VALUES ('Pets');
+INSERT INTO Categoria (Categoria) VALUES ('Comida geral');
+
+INSERT INTO Lote (dataDeEntrada,valorDeFabrica,Quantidade,Produto_idProduto,Fornecedor_idFornecedor) VALUES ('28/05/2020','3.50','10','1','5');
+INSERT INTO Lote (dataDeEntrada,valorDeFabrica,Quantidade,Produto_idProduto,Fornecedor_idFornecedor) VALUES ('20/08/2020','28.50','5','2','3');
+INSERT INTO Lote (dataDeEntrada,valorDeFabrica,Quantidade,Produto_idProduto,Fornecedor_idFornecedor) VALUES ('05/05/2021','20.90','9','3','6');
+INSERT INTO Lote (dataDeEntrada,valorDeFabrica,Quantidade,Produto_idProduto,Fornecedor_idFornecedor) VALUES ('15/06/2019','10.50','7','4','7');
+INSERT INTO Lote (dataDeEntrada,valorDeFabrica,Quantidade,Produto_idProduto,Fornecedor_idFornecedor) VALUES ('05/06/2020','8.20','15','5','8');
