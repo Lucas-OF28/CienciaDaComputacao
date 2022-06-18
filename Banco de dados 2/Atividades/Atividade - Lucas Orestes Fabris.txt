@@ -1,0 +1,23 @@
+-----------------------1------------------
+select cli.nomecompanhia, SUM(ord_de.quantidade) from clientes as cli 
+inner join ordens as ord 
+inner join ordens_detalhes as ord_de 
+on cli.IDCliente = ord.idcliente and ord.idordem = ord_de.idordem
+group by cli.nomecompanhia order by SUM(ord_de.quantidade) desc limit 5;
+
+----------------------2------------------
+select nome, sobrenome 
+from funcionarios 
+where regiao is null
+-----------------------3----------------------
+
+Duvida pois é semelhante a questão 2
+
+
+----------------------4----------------------
+select ord.DataOrdem, ord_de.Quantidade, prod.nomeproduto 
+from ordens as ord
+inner join produtos as prod
+right join ordens_detalhes as ord_de 
+on ord.idordem = ord_de.idordem
+and ord_de.IDProduto = prod.IDProduto;

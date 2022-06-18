@@ -1,0 +1,13 @@
+1-----------------------
+select count(pr.produtoId) as TOTAL from pedidos_item pi inner join produtos pr
+on pi.pedidosId = pr.pedidosId
+
+2-----------------------
+select count(od.idOrdem) as TOTAL, month(o.DataOrdem) as MES,year(o.DataOrdem) from produtos p right join ordens_detalhes on p.IDProdutos = od.IDProduto
+inner join ordens o on o.IDOrdem = od.IDOrdem
+group by TOTAL with rollup
+
+
+3---------------------
+
+select c.NomeContato as

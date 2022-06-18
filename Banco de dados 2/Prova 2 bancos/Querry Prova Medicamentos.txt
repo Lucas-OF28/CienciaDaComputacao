@@ -1,0 +1,84 @@
+CREATE DATABASE `farmacia` /*!40100 DEFAULT CHARACTER SET latin1 */;
+use farmacia;
+
+CREATE TABLE `medicamento` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `desc` text,
+  `generico` tinyint(4) DEFAULT NULL,
+  `similar` tinyint(4) DEFAULT NULL,
+  `fabricante_id` int(11) NOT NULL,
+  `tipo_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_medicamento_tipo_idx` (`tipo_id`),
+  KEY `fk_medicamento_fornecedor_idx` (`fabricante_id`),
+  CONSTRAINT `fk_medicamento_fornecedor` FOREIGN KEY (`fabricante_id`) REFERENCES `fornecedor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_medicamento_tipo` FOREIGN KEY (`tipo_id`) REFERENCES `tipo_med` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `fornecedor` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `rua` varchar(50) NOT NULL,
+  `bairro` varchar(30) NOT NULL,
+  `estado_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_fornecedor_estado_idx` (`estado_id`),
+  CONSTRAINT `fk_fornecedor_estado` FOREIGN KEY (`estado_id`) REFERENCES `estado` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `tipo_med` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `desc` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `med_ativo` (
+  `medicamento_id` int(11) NOT NULL,
+  `principioativo_id` int(11) NOT NULL,
+  PRIMARY KEY (`medicamento_id`,`principioativo_id`),
+  KEY `fk_med_ativo_ativo_idx` (`principioativo_id`),
+  CONSTRAINT `fk_med_ativo_medicamento` FOREIGN KEY (`medicamento_id`) REFERENCES `medicamento` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_med_ativo_ativo` FOREIGN KEY (`principioativo_id`) REFERENCES `ativo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `estado` (
+  `id` int(11) NOT NULL,
+  `sigla` varchar(2) NOT NULL,
+  `nome` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `precos` (
+  `id` int(11) NOT NULL,
+  `valor` decimal(10,0) DEFAULT NULL,
+  `ultima_att` datetime DEFAULT NULL,
+  `loja_id` int(11) NOT NULL,
+  `medicamento_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_precos_vendedor_idx` (`loja_id`), 
+  KEY `fk_precos_medicamento_idx` (`medicamento_id`),
+  CONSTRAINT `fk_precos_vendedor` FOREIGN KEY (`loja_id`) REFERENCES `vendedor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_precos_medicamento` FOREIGN KEY (`medicamento_id`) REFERENCES `medicamento` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `ativo` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `desc` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `vendedor` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `rua` varchar(50) NOT NULL,
+  `bairro` varchar(30) NOT NULL,
+  `estado_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_estado_vendedor_idx` (`estado_id`),
+  CONSTRAINT `fk_estado_vendedor` FOREIGN KEY (`estado_id`) REFERENCES `estado` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

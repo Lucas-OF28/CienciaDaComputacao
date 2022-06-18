@@ -1,0 +1,12 @@
+﻿CREATE VIEW vw_produtosPorEstado AS
+SELECT prod.NomeProduto as `Nome do Produto`, 
+	   est.nome as `Estado`
+	from pedidos as ped 
+    INNER JOIN clientes as cli on cli.ClienteId = ped.clienteID 
+    INNER JOIN produtos as prod 
+    INNER JOIN pedidos_item as peditem on peditem.pedidoID = ped.pedidoID 
+    and peditem.produtoID = prod.produtoID
+    INNER JOIN estados as est on est.codestado = cli.estado
+    order by peditem.quantidade;
+    
+    

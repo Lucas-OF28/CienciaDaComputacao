@@ -1,0 +1,48 @@
+﻿CREATE DATABASE `postos` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+CREATE TABLE `combustivel` (
+  `id` int(11) NOT NULL,
+  `desc` varchar(45) NOT NULL,
+  `tipo_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_tipo_combus_idx` (`tipo_id`),
+  CONSTRAINT `fk_tipo_combus` FOREIGN KEY (`tipo_id`) REFERENCES `tipo_combustivel` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `tipo_combustivel` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `desc` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `estado` (
+  `id` int(11) NOT NULL,
+  `UF` varchar(2) NOT NULL,
+  `nome` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `precos` (
+  `id` int(11) NOT NULL,
+  `valor` decimal(10,0) NOT NULL,
+  `ultima_att` datetime DEFAULT NULL,
+  `posto_id` int(11) NOT NULL,
+  `combustivel_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_precos_posto_idx` (`posto_id`),
+  KEY `fk_precos_combus_idx` (`combustivel_id`),
+  CONSTRAINT `fk_precos_combus` FOREIGN KEY (`combustivel_id`) REFERENCES `combustivel` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_precos_posto` FOREIGN KEY (`posto_id`) REFERENCES `posto` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `posto` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `rua` varchar(40) NOT NULL,
+  `bairro` varchar(40) NOT NULL,
+  `estado_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_posto_estado_idx` (`estado_id`),
+  CONSTRAINT `fk_posto_estado` FOREIGN KEY (`estado_id`) REFERENCES `estado` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

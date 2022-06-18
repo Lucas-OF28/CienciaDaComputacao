@@ -1,0 +1,8 @@
+DELIMITER &
+CREATE FUNCTION pedidoDolar(idpedido int) returns decimal
+DETERMINISTIC
+BEGIN
+	RETURN (select p.valor_pedido * c.vlcotacao as dolar from pedidos as p 
+    INNER JOIN cotacao as c
+	where p.pedidoid = 7);
+END & 
