@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 18</title>
+</head> 
+
+
+<script type="text/javascript">
+    var url = 'https://parallelum.com.br/fipe/api/v1/carros/marcas';
+    var requisicao = fetch(url);
+    var resp = requisicao.then(function(resp){
+        return resp.json()
+    })
+     resp.then(function(texto){
+        for (var i = 0; i < texto.length; i++) {
+            var element = document.getElementById('listaMarcas');
+            element.innerHTML += '<option value='+texto[i].codigo+'>'+texto[i].nome+'</option>'; 
+        }
+    });
+    function buscar() {
+        var select = document.getElementById('marcas');
+        var url = 'https://parallelum.com.br/fipe/api/v1/carros/marcas/'+select.value+'/modelos';
+        var requisicao = fetch(url);
+        var resp = requisicao.then(function(resp){
+        return resp.json()
+        })
+
+        resp.then(function(texto){
+        for(var i = 0; i < texto.modelos.length; i++){
+            console.log(texto.modelos[i].nome);
+            var element = document.getElementById('main');
+            element.innerHTML += '<p class="lista"><label class="linke">Nome: '+texto.modelos[i].nome+'</label></p><hr/>'
+        }
+        });
+    }
+    </script>
+
+        <label for="marcas">Código/Marca do Carro:</label>
+
+        <input type="text" name="marcas" id="marcas" list="listaMarcas">
+            <datalist id="listaMarcas" >
+        </datalist>
+        <button onclick="buscar()">buscar</button>
+        <main id="main"></main>
+    </body>
+    </html>

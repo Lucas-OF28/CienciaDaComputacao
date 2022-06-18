@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projeto Final Tema:Yu-Gi-Oh" />
+    <link rel="icon" alt="Carta." href="../img/icon.jpg" type="image" />
+    <meta name="author" content="Jean Ricken & Lucas Fabris" />
+    <link rel="stylesheet" href="../cadastro.css"/>
+    <title>Projeto Final</title>        
+</head>
+<body>
+
+<header>
+    <h3>Inserir novas cartas</h3>
+</header>
+
+<form method="POST" id="form">
+    <div class="form-item">
+        <label>Nome da carta</label>
+        <input id="nome" type="text" />
+    </div>  
+
+    <div class="form-item">
+        <label>Atributo</label>
+        <input id="atributo" type="text"/>
+    </div>
+
+    <div class="form-item">
+        <label>Tipo da carta</label>
+        <input id="tipoDaCarta"type="text"/>
+    </div>    
+
+    <div class="form-item">
+        <label>Nivel</label>
+        <input id="nivel" type="number"/>
+    </div>
+
+    <div class="form-item">
+        <label>Ataque</label>
+        <input id="ataque" type="number"/>
+    </div>
+
+    <div class="form-item">
+        <label>Defesa</label>
+        <input id="defesa" type="number" />
+    </div>
+
+    <div class="form-item">
+        <label>Efeito</label>
+        <input id="sitCarta" type="text"/>
+    </div>
+
+    <div class="form-item">
+        <label>URL da imagem da carta</label>
+        <input id="image" type="text"/>
+    </div>
+
+    <div class="form-item">
+        <input type="submit" value="Cadastrar" class="enviar"/>
+    </div>    
+</form>
+
+<div class="main" id="main">
+    <div class="page-header">
+        <a class="btn-voltar" href="../index.html">Voltar</a>
+    </div>
+</div>
+
+
+<footer><h3>Pagina By Jean Ricken and Lucas Fabris</h3></footer>
+
+</body>
+
+<script src="index.js"></script>
+<script>
+     var formulario = document.querySelector("form")
+    formulario.addEventListener('submit', inserir)
+    </script>
+</html>

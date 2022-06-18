@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio_14</title>
+</head>
+<body>
+    <form id= "spam">
+        <div>
+           <label for="nome">Informe o Nome: </label>
+           <input type="text" name = "nome" id = "nome">
+           <label for="mail">Informe o Email: </label>
+           <input type="email" name="email" id="email">
+           <button id="btn" onClick="enviar()"> Enviar </button>
+        </div>
+    </form>
+
+</body>
+
+<script>
+    function enviar (){
+       var nome = document.getElementById("nome").value;
+       var email = document.getElementById("email").value;
+       document.getElementById("spam").innerHTML = "<h1>Nome do usuario: "+ nome + "<div>Email: "+email+ "</div>Você foi descadastrado da lista de spam com sucesso</h1>"  }
+</script>
+</html>

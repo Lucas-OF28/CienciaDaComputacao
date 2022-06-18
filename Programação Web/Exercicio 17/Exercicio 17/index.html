@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 17</title>
+</head>
+<body>
+
+    <form>
+        <input type="name" id="nome"placeholder="Digite o nome">
+        <input type="text" id="nacionalidade"placeholder="Nacionalidade">
+        <input type="url" id="imagem"placeholder="Link da imagem">
+        <button onclick="inserir()">Inserir</button>
+    </form>
+</body>
+<script>
+
+function inserir(){
+    var body = document.getElementsByTagName("body")[0];
+    var nome = document.getElementById("nome").value;
+    var imagem = document.getElementById("imagem").value;
+    var nacionalidade = document.getElementById("nacionalidade").value;
+
+    body.innerHTML = "<img src=\"" + imagem + "\"><h1>" + nome + "<\h1><p>" + nacionalidade + "<\p>" + body.innerHTML;
+
+}
+
+const input = document.querySelector('input');
+const nome = document.getElementsByTagName('nome');
+
+input.addEventListener('change', updateValue);
+
+function updateValue(e) {
+  log.textContent = e.target.value;
+}
+
+
+</script>
+</html>

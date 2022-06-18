@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Cadastro Super Heróis</title>
+</head>
+<body>
+    <form action="https://professor.venson.net.br/ppw/exercicios/forms/cadastroSuperHeroi.php" method="POST">
+        <div>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name">
+        </div>
+        <div>
+        <label for="email">Email de Contato</label>
+        <input type="email" name="email">
+        </div>
+        <div>
+        <label for="birthday">Data de nascimento:</label>
+        <input type="date" name="birthday">
+        </div>
+        <div>
+            <label for="alter_ego">Alter ego:</label>
+            <input type="text" name="alter_ego">
+        </div>
+        <div>
+            <label for="tel">Telefone:</label>
+            <input type="tel" name="tel">
+        </div>
+        <div>
+            <label for="employment">Ocupação:</label>
+            <input type="text" name="employment">
+        </div>
+        <div>
+            <label for="zone">Zona de atuação:</label>
+            <input type="text" name="zone" id="zone" list="paises">
+            <datalist id="paises">
+                <option>Nova York</option>
+                <option>Asgard</option>
+                <option>Brasil</option>
+                <option>Londres</option>
+            </datalist>
+        </div>
+        <div>
+            <label for="color">Cor Preferida:</label>
+            <input type="color" name="color">
+        </div>
+        <div>
+            <textarea name="obs" placeholder="Observações">
+            
+            </textarea>
+        </div>
+        <div>
+            <label for="human">Humano:</label>
+            <input type="radio" id="human" name="human" value="Sim"> <label>Sim</label>
+            <input type="radio" id="human" name="human" value="Não"> <label>Não</label>
+        </div>
+        <div>
+            <input type="hidden" name="version" value="1.0">
+        </div>
+        <button type="submit">Enviar</button>
+        </form>
+</body>
+</html>

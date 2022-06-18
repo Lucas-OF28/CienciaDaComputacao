@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projeto Final Tema:Yu-Gi-Oh" />
+    <link rel="icon" alt="Carta." href="../img/icon.jpg" type="image" />
+    <meta name="author" content="Jean Ricken & Lucas Fabris" />
+    <link rel="stylesheet" href="../ver.css" />
+    <title>Projeto Final</title>        
+</head>
+<body>
+    <header>
+        <h3>Cartas Cadastradas</h3>
+    </header>
+
+   <form>
+            <div class="container-lista" id="lista">
+                <h2>Cartas cadastradas</h2>
+                <img id="foto">
+
+                <div class="select-card">
+                    <div>Nome: <span id="nome"></span></div>
+                    <div>Atributo: <span id="atributo"></span></div>
+                    <div>Tipo da carta: <span id="tipoDaCarta"></span></div>
+                    <div>Nivel: <span id="nivel"></span></div>
+                    <div>Ataque: <span id="ataque"></span></div>
+                    <div>Defesa: <span id="defesa"></span></div>
+                    <div>Efeito: <span id="sitCarta"></span></div>
+                </div>
+            </div>           
+    </form>
+        <div class="main">
+        <div class="page-header">
+        <a class="btn-voltar" href="../index.html">Voltar</a></div>
+        </div>
+             
+<footer><h3>Pagina By Jean Ricken and Lucas Fabris</h3></footer>
+</body>
+
+<script src="index.js"></script> 
+<script>
+    listar();
+</script>

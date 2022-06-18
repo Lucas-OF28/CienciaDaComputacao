@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+<form id="formulario">
+
+    <div id="dica_email"><input type="email"></div>
+    <div id="dica_senha"><input type="password"></div>
+    <button type="button" onclick="return desaparecer()">Autenticar</button>
+</form>
+
+<section class="autentica">
+    Está sendo autenticado
+</section>
+
+
+</body>
+<script>
+    function desaparecer(){
+        document.querySelector("#formulario").classList.add("sumir")
+    }
+</script>
+</html>

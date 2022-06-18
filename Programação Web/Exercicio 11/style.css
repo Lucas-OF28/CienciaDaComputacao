@@ -1,0 +1,38 @@
+form{
+    background-color: rgb(97, 172, 223);
+    display: flex;
+    flex-direction: column; 
+    max-width: 500px;
+    margin: 0 auto;
+}
+button{
+    border: 0;
+    background-color: blue;
+    padding: 2rem;
+}
+
+form *{
+    margin: 0.5rem;
+}
+.autentica{
+    opacity: 0;
+}
+div:hover{
+    background-color: indianred;
+    transition-property: background-color ;
+    transition-duration: 0.8s;
+    transition-delay: 0s;
+    transition-timing-function: ease-in-out;
+}
+
+#dica_email:hover::after{
+    content: "Digite o email";
+}
+#dica_senha:hover::after{
+    content: "Digite a senha";
+}
+
+.sumir{
+    opacity: 0;
+    transition: opacity 3s ;
+}

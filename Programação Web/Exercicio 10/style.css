@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+}
+
+h2{
+    text-align: center;
+    text-decoration: underline;
+}
+
+div{
+    margin: 1rem;
+    flex-basis: 400px;
+    text-align: center;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.alinhamento{
+    max-height: 1000px;
+    flex-basis: 250px;
+    margin: 0 auto;
+}
+.descricao{
+    background-color: forestgreen ;
+    flex-basis: 200px;
+    text-align: justify;
+}
+
+img{
+    width: 200px;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+}

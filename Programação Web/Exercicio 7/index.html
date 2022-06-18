@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05 - PPW I UNESC</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/venson.css">
+    <link rel="stylesheet" href="../css/venson-cal.css">
+    <link rel="stylesheet" href="../css/venson-img-table.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/a11y-dark.min.css"
+        integrity="sha256-7L/IK7qUTcgTXtfLAxip5Eo+hnp+pSe5htBCh5pYg6o=" crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <header>
+        <a href="/">
+            <h1>Programação para Web</h1>
+        </a>
+    </header>
+
+    <main>
+        <!-- BODY -->
+        <div class="container">
+
+            <h2>Aula 05 - Introdução à Folha de Estilos</h2>
+
+            <!-- INDICE -->
+            <div class="card">
+                <div class="card-header dark-color">
+                    Índice
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><a href="#atributos_globais">Atributos Globais</a></li>
+                        <li><a href="#navegacao_por_ancoras">Navegação por ancoras</a></li>
+                        <li><a href="#folha_de_estilo">Folha de Estilos</a></li>
+                        <li><a href="#propriedades_comuns">Propriedades comuns</a></li>
+                        <li><a href="#regas_avançadas">Regras Avançadas</a></li>
+                        <li><a href="#criando_uma_folha">Criando uma folha</a></li>
+                        <li><a href="#anexando_a_folha_css_ao_documento">Anexando a folha CSS ao documento</a></li>
+                        <li><a href="#outras_formas_de_usar">Outras formas de usar</a></li>
+                        <li><a href="#definindo_seletores_para_classes">Definindo seletores para classes</a></li>
+                        <li><a href="#definindo_seletores_para_identicadores">Definindo seletores para identificadores</a></li>
+                        <li><a href="#definindo_seletores_de_atributo">Definindo seletores de atributo</a></li>
+                        <li><a href="#definindo_seletores_compostos">Definindo seletores compostos</a></li>
+                        <li><a href="#topicos_adicionais">Topicos Adicionais</a></li>
+                        <li><a href="#maoNaMassa">Mão na massa</a></li>
+                        <li><a href="#exercicio_complementares">Exercicio Complementares</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 id="atributos_globais">Atributos Globais no HTML</h3>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    O que são atributos globais?
+                </div>
+                <div class="card-body">
+                    <p>
+                        Atributos globais são atributos (veja a <a href="aula02.html">Aula 02</a>) que podem ser
+                        utilizados
+                        em qualquer elemento HTML. Mesmo em elementos que não estão no padrão do HTML, mas são
+                        implementados
+                        em alguns navegadores, os atributos globais podem ser utilizados (ainda que nem sempre tenham
+                        efeito).
+                    </p>
+                    <p>
+                        Além dos atributos globais básicos que veremos a seguir, existem vários atributos que possuem
+                        como
+                        comportamento a manipulação de evento, como por exemplo: <code>onclick</code>,
+                        <code>onload</code>
+                        ou <code>onchange</code>. Esses atributos determinam comportamentos que são executados na
+                        ocorrência
+                        de algum evento, sendo utilizados com a linguagem javascript.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Identificador (ID)
+                </div>
+                <div class="card-body">
+                    <p>
+                        O atributo <code>id</code> define um identificador exclusivo que deve ser <strong>único</strong>
+                        para todo o documento. O objetivo principal desse atributo é identificar um elemento para que
+                        possa
+                        ser estilizado (CSS) ou manipulado (javascript). Além disso, é possível usar do identificador
+                        para
+                        criar links para pontos específicos da página, como veremos em seguida.
+                    </p>
+
+                    <pre><code>&lt;form id=&quot;formularioCadastro&quot;&gt;&lt;/form&gt;</code></pre>
+
+                    <p>
+                        O valor do identificador deve seguir algumas regras:
+
+                    <ul>
+                        <li>Não deve conter espaços;</li>
+                        <li>Não deve conter tabulações;</li>
+                        <li>Não deve ser utilizado duas vezes no mesmo documento;</li>
+                    </ul>
+
+                    O valor também é <a href="https://pt.wikipedia.org/wiki/Case-sensitive"
+                        target="_blank">case-sensitive</a>, assim como os nomes
+                    de elementos e atributos. De maneira geral, o identificador deve ser tratado de maneira similar
+                    aos
+                    identificadores de variáveis em linguagens de programação.
+                    </p>
+
+                    <p class="note">
+                        Pode-se utilizar caracteres de separação (como <code>_</code>, <code>-</code> ou
+                        <code>.</code>).
+                        Porém eles não são indicados quando é necessário manter a compatibilidade com versões anteriores
+                        ao
+                        HTML 5, quando esse tipo de caractere não era permitido.
+                    </p>
+
+                    <h4 id="navegacao_por_ancoras">Navegação por Âncoras</h4>
+
+                    <p>Como já mencionado, o identificador pode ser utilizado para permitir navegar para pontos
+                        específicos
+                        de um documento. Esse tipo de hiperlink pode ser chamado de Navegação por Âncoras.</p>
+                    <p>Para criar um link para um ponto específico de uma página, podemos usar o elemento
+                        <code>a</code>,
+                        onde a URI informada no atributo <code>href</code> será valor do elemento precedido pelo
+                        caracter
+                        <code>#</code>:</p>
+
+                    <pre><code>&lt;a href=&quot;#previsaoTempo&quot;&gt;Veja a previs&atilde;o do tempo&lt;/a&gt;
+&lt;section id=&quot;previsaoTempo&quot;&gt;</code></pre>
+
+                    <p>No exemplo acima, o link deve redirectionar para a <code>section</code> cujo o identificador é
+                        <code>previsaoTempo</code>. Dessa forma, não devem existir dois elementos com o mesmo nome na
+                        página. O direcionamento para o local destino é feito pelo navegador com base na renderização
+                        atual,
+                        dessa forma, a rolagem da página é automaticamente modificada para o ponto onde encontra-se o
+                        elemento. Caso o elemento já esteja em visualização na página, é possível que nada aconteça.</p>
+
+                    <p>Faça o teste com <a href="#maoNaMassa">este link</a>, que redireciona você para a seção de
+                        exercícios
+                        desta página.</p>
+
+                    <p>Repare também que esta é uma ótima forma de prover índices para as suas páginas, como podemos ver
+                        na
+                        <a href="https://pt.wikipedia.org/wiki/Mozilla#Firefox" target="_blank">Wikipedia</a></p>
+
+                    <p>Por fim, também podemos utilizar o valor do identificador de um elemento para apontar diretamente
+                        para ele através de um link externo, como no exemplo:</p>
+
+                    <pre><code>&lt;a href=&quot;https://pt.wikipedia.org/wiki/Mozilla#Firefox&quot;&gt;Informações sobre o Firefox&lt;/a&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Classe (class)
+                </div>
+                <div class="card-body">
+                    <p>
+                        O atributo <code>class</code> é utilizado como forma de agrupar elementos semelhantes sob um
+                        mesmo
+                        identificador. Ao contrário do <code>id</code>, o atributo <code>class</code> não exige que o
+                        valor
+                        seja único por documento. Sob esse atributo, podemos agrupar elementos com características
+                        semânticas semelhantes, como no exemplo:
+                    </p>
+
+                    <pre><code>&lt;p id=&quot;nota01&quot; class=&quot;nota&quot;&gt;Isto &eacute; uma nota&lt;/p&gt;
+&lt;p class=&quot;conteudo&quot;&gt;Isto &eacute; um par&aacute;grafo que descreve o conte&uacute;do da p&aacute;gina&lt;/p&gt;
+&lt;p id=&quot;nota02&quot; class=&quot;nota&quot;&gt;Isto tamb&eacute;m &eacute; uma nota&lt;/p&gt;</code></pre>
+
+                    <p>Assim como o <code>id</code>, o atributo <code>class</code> também tem como função auxiliar a
+                        identificação dos elementos para fins de estilização (CSS) e manipulação (javascript).</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Estilo (style)
+                </div>
+                <div class="card-body">
+                    <p>
+                        O <code>style</code> é um atributo global usado para aplicar estilização CSS em um elemento. É
+                        importante destacar que o uso deste atributo tem como propósito principal permitir estilização
+                        rápida, geralmente para testes, e não é indicado para estilização de um documento em produção. O
+                        atributo <code>style</code> substitui o uso do <strong>elemento</strong> <code>style</code>.
+                    </p>
+                    <pre><code>&lt;div style="background-color: red;"&gt;Veja a previs&atilde;o do tempo&lt;/div&gt;</code></pre>
+
+                    <p>O valor do atributo utiliza a mesma estrutura do documento CSS. O nome da propriedade que
+                        desejamos
+                        manipular + o valor que vamos dar a ela:</p>
+
+                    <pre><code>propriedade: valor;</code></pre>
+
+                    <p>Dessa forma, propriedade refere-se a um elemento estabelecido no CSS, cujo o valor depende de
+                        qual
+                        elemento estamos nos referindo.Também é possível alterar mais de uma propriedade com este
+                        elemento:
+                    </p>
+
+                    <pre><code>&lt;div style="background-color: red; color: #FFFFFF;"&gt;Veja a previs&atilde;o do tempo&lt;/div&gt;</code></pre>
+
+                    <p>É importante lembrar que ao alterar o estilo de um elemento usando o atributo <code>style</code>,
+                        esta estilização é aplicada somente ao respectivo elemento, independente de sua classe ou id.
+                    </p>
+
+                    <h4 id="propriedades_comuns">Propriedades comuns</h4>
+
+                    <p>Nesta lista seguem algumas propriedades comuns para alterar o estilo de elementos HTML. Mais pra
+                        frente veremos outras propriedades e estudaremos mais a fundo como funciona a estilização no
+                        CSS:
+
+                    <ul>
+                        <li><code>color</code> - Altera cor do texto dentro do elemento (Ex. de Valores:
+                            <code>red</code>, <code>green</code>, <code>#555555</code>, <code>#FFF</code>)</li>
+                        <li><code>background-color</code> - Altera a cor de fundo do elemento (Ex. de Valores:
+                            <code>red</code>, <code>green</code>, <code>#555555</code>, <code>#FFF</code>)</li>
+                        <li><code>border</code> - Altera o estilo da borda do elemento (Ex. de Valores:
+                            <code>1px solid red</code>)</li>
+                        <li><code>font-family</code> - Especifica a família de fontes a ser utilizada (Ex. de
+                            Valores:
+                            <code>'Serif'</code>, <code>"Times New Roman", Times, serif</code>)</li>
+                        <li><code>height</code> - Especifica a altura de um elemento (Ex. de Valores:
+                            <code>1rem</code>,
+                            <code>20px</code>, <code>50%</code>)</li>
+                        <li><code>width</code> - Especifica a altura de um elemento (Ex. de Valores:
+                            <code>1rem</code>,
+                            <code>20px</code>, <code>50%</code>)</li>
+                        <li><code>margin</code> - Altera o tamanho da margem externa do elemento (Ex. de Valores:
+                            <code>1rem</code>, <code>20px</code>, <code>50%</code>)</li>
+                        <li><code>padding</code> - Altera o tamanho da margem interna do elemento (Ex. de Valores:
+                            <code>1rem</code>, <code>20px</code>, <code>50%</code>)</li>
+                        <li><code>text-align</code> - Especifica o alinhamento do texto dentro do elemento (Ex. de
+                            Valores: <code>left</code>, <code>center</code>, <code>justify</code>)</li>
+                        <li><code>text-transform</code> - Altera a capitalização do texto dentro do elemento (Ex. de
+                            Valores: <code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code>)</li>
+                        <li><code>line-height</code> - Especifica a altura da linha do texto dentro do elemento (Ex.
+                            de Valores: <code>1rem</code>,
+                            <code>20px</code>, <code>50%</code>)</li>
+                        <li><code>list-style</code> - Altera o marcador de uma lista (Ex. de
+                            Valores: <code>none</code>, <code>url()</code>, <code>square</code>)</li>
+                    </ul>
+
+                    <p>Alguns elementos, como <code>margin</code>, <code>padding</code> e <code>border</code>, podem
+                        utilizar um sufixo para definir o lado em que se aplicará a especificação, como por exemplo
+                        <code>margin-left</code>, <code>padding-right</code> ou <code>border-top</code>. Dessa forma
+                        usamos os sufixos:
+                    <ul>
+                        <li><code>*-top</code> - acima</li>
+                        <li><code>*-bottom</code> - abaixo</li>
+                        <li><code>*-left</code> - esquerda</li>
+                        <li><code>*-right</code> - direita</li>
+                    </ul>
+                    </p>
+
+                    <p class="note">As alterações realizadas podem se comportar de maneira diferente de elemento
+                        para
+                        elemento. Alterar o <code>background-color</code> do elemento <code>body</code> altera a cor
+                        de
+                        fundo de toda a página, mas não necessariamente dos elementos que estão aninhados dentro de
+                        body, por exemplo. Ao alterar a propriedade <code>color</code>, o valor é geralmente herdado
+                        de
+                        elementos pais para filhos, a menos que se especifique o contrário.</p>
+
+                    </p>
+
+                </div>
+            </div>
+
+            <h3 id="folha_de_estilo">Folha de Estilos</h3>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    O que é uma folha de estilos?
+                </div>
+                <div class="card-body">
+                    <p>Até então, estutamos a linguagem HTML e suas aplicações na criação de documentos que podem ser
+                        lidos
+                        por
+                        navegadores, leitores de tela, buscadores e outros tipos de software. No entanto, a linguagem
+                        HTML
+                        atualmente tem como objetivo apenas estruturar os dados de um documento, gerando a necessidade
+                        do
+                        uso de
+                        uma outra tecnologia para a apresentação visual desses dados ao usuário.</p>
+
+                    <div class="img-group">
+                        <img src="https://media.prod.mdn.mozit.cloud/attachments/2019/02/13/16493/98a84bbd9be3b63e98a1d17646657fd3/html-example.png"
+                            alt="Exemplo de documento HTML">
+                        <legend>Documentos estruturados com o HTML tendem a ser bastante "não atraentes", sem a
+                            utilização
+                            de algum
+                            tipo de estilização.</legend>
+                    </div>
+
+                    <p>Dessa forma, utilizamos o
+                        conceito de linguagem folha de estilos, um tipo de padrão que exprime a apresentação de
+                        documentos
+                        estruturados de maneira visual e também auditiva.</p>
+                    <p>Uma das principais linguagens de folha de estilo utilizadas no mundo é o
+                        <code>Cascading Style Sheet</code>, ou <code>CSS</code>.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Cascading Style Sheet
+                </div>
+                <div class="card-body">
+                    <p>O <code>Cascading Style Sheet</code> (CSS) é uma linguagem de estilos usada para estilizar
+                        documentos
+                        escritos em linguagens como <code>HTML</code>, <code>XHTML</code> (uma reformulação da linguagem
+                        HTML com o padrão XML), <code>SVG</code> (linguagem baseada no XML para representação de
+                        gráficos
+                        vetoriais), <code>XUL</code> (linguagem da Mozilla para interfaces gráficas).</p>
+
+                    <p>O CSS é capaz de identificar a estrutura implementada no HTML e especificar alternações na
+                        estilização de sua apresentação. Com essa linguagem, é possível realizar estilizações simples de
+                        texto - como alterar a cor e tamanho de um texto - até criação de colunas e grids e animações
+                        complexas.</p>
+
+                    <div class="img-group">
+                        <img src="../img/html_only.png" alt="Página somente com HTML">
+                        <legend>Página HTML sem estilização</legend>
+                        <img src="../img/css_stylesheet.png" alt="Exemplo de uma folha de estilos">
+                        <legend>Página HTML com estilização CSS</legend>
+                        <img src="../img/html_with_css.png" alt="Página com HTML e estilo CSS">
+                        <legend>Página HTML com estilização CSS</legend>
+                    </div>
+
+                    <p>Os três exemplos acima representam em ordem como uma folha de estilos é aplicada a um documento
+                        HTML.
+                        Após organizar a estrutura do documento HTML, definimos uma folha de estilo através de uma
+                        sintaxe
+                        que veremos logo mais. Essa folha é utilizada pelo navegador para aplicar adequadamente o estilo
+                        definido na tela do usuário.</p>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Estrutura de uma folha de estilo CSS
+                </div>
+                <div class="card-body">
+
+                    <p>O CSS é uma linguagem baseada em regras, dessa forma utilizamos uma sintaxe padronizada para
+                        declarar
+                        regras que serão aplicadas aos elementos, como no exemplo a seguir:</p>
+
+                    <pre><code class="css">h1 {
+    color: red;
+    font-size: 5em;
+}</code></pre>
+
+                    <p>A regra acima pode ser lida da seguinte forma:
+                    <ul>
+                        <li><code>h1</code> refere-se ao elemento HTML, essa declaração é chamada de
+                            <strong>seletor</strong></li>
+                        <li>Em seguida, utilizamos as chaves <code>{}</code> para encapsular as regras que pretendemos
+                            aplicar ao seletor</li>
+                        <li>As linhas <code>color: red;</code> e <code>font-size: 5em</code> são as
+                            <strong>propriedades</strong> que pretendemos modificar e seus respectivos novos
+                            <strong>valores</strong></li>
+                    </ul>
+                    </p>
+
+                    <p>Dessa forma, para fins didáticos, podemos descrever a sintaxe do CSS da forma abaixo:</p>
+
+                    <pre><code>seletor {
+    propriedade: valor;
+    ...
+}</code></pre>
+
+                    <p>Assim como dentro de um seletor podemos descrever várias propriedades diferentes, também podemos
+                        adicionar vários seletores em um mesmo documento: </p>
+
+                    <pre><code class="css">h1 {
+    color: red;
+    font-size: 5em;
+}
+
+p {
+    color: black;
+}</code></pre>
+
+                    <p>Usando o exemplo acima, podemos definir o estilo de qualquer elemento HTML em um documento. O
+                        conjunto de regras de cada seletor vale para todos os elementos do mesmo tipo, no entanto,
+                        existem
+                        casos onde desejamos definir regras mais complexas ou seletivas para os elementos, por exemplo:
+                    <ul>
+                        <li>Como aplicar as regras apenas para alguns parágrafos (elemento <code>p</code>)?</li>
+                        <li>Como aplicar as regras apenas para um elemento específico?</li>
+                        <li>Como aplicar as regras apenas para parágrafos (<code>p</code>) que estão dentro do elemento
+                            <code>main</code>?</li>
+                    </ul>
+                    A resposta para as questões acima serão respondidas aprofundando nosso conhecimento dos seletores.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Documento CSS
+                </div>
+                <div class="card-body">
+
+                    <h4 id="criando_uma_folha">Criando uma folha CSS</h4>
+
+                    <p>A maneira mais adequada de introduzir estilização a um documento HTML é através da criação de uma
+                        folha de estilos em um arquivo separado. Dessa forma, separamos as responsabilidades em arquivos
+                        diferentes e podemos facilmente modificar a apresentação de uma página através da substituição
+                        desse arquivo. Todo arquivo do tipo CSS terá a extensão <code>.css</code> para fins de
+                        identificação.</p>
+
+                    Exemplo de um arquivo <code>style.css</code>:
+                    <pre><code class="css">h1 {
+    color: red;
+    font-size: 5em;
+}
+
+p {
+    color: black;
+}</code></pre>
+
+                    <h4 id="anexando_a_folha_css_ao_documento">Anexando a folha CSS ao documento HTML</h4>
+
+                    <p>Para que a folha de estilos seja aplicada, precisamos especificar no documento HTML o local de
+                        nossa folha no sistema de arquivos. Para isso, usaremos o elemento <code>link</code>, como no
+                        exemplo a seguir:</p>
+
+                    <code>index.html</code>:
+                    <pre><code>&lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;</code></pre>
+
+                    <p>Repare que incluiremos o elemento <code>link</code> dentro do elemento <code>head</code> da
+                        página HTML. Isto é o suficiente para vincular nosso arquivo CSS ao documento HTML.</p>
+
+                    <h4 id="outras_formas_de_usar">Outras formas de usar</h4>
+
+                    <p>Além da utilização através de um arquivo separado, também podemos usar o CSS diretamente em um
+                        documento HTML, sem necessidade de anexar um arquivo com a folha de estilos, através dessas duas
+                        maneiras:
+                    <ul>
+                        <li>Usando o elemento <code>style</code> que encapsula a mesma sintaxe que usamos em um arquivo
+                            CSS:
+                            <pre><code>&lt;style&gt;
+h1 {
+    color: red;
+    font-size: 5em;
+}
+&lt;/style&gt;</code></pre>
+                        </li>
+                        <li>Ou usando o atributo <code>style</code> dentro de um elemento HTML (como vimos na <a
+                                href="./aula05.html" target="_blank">Aula 05</a>). Ex.:
+                            <code>&lt;p style=&quot;color: red;&quot;&gt;&lt;/p&gt;</code></a></li>
+                    </ul>
+                    </p>
+
+                </div>
+            </div>
+
+            <h3 id="regas_avançadas">Regras avançadas no CSS</h3>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Seletores
+                </div>
+                <div class="card-body">
+
+                    <p>Podemos criar seletores que sejam aplicados não diretamente a elementos HTML, mas a condições
+                        especiais. A seguir veremos essas condições especiais:</p>
+
+                    <h4 id="definindo_seletores_para_classes">Definindo seletores para classes</h4>
+
+                    <p>Podemos utilizar regras que se apliquem ao atributo <code>class</code> definido em elementos
+                        HTML.
+                        Para isso, utilizaremos o <code>.</code> (ponto) + o <code>nome da classe</code>, como no
+                        exemplo:
+                    </p>
+
+                    <p>HTML: </p>
+                    <pre><code>&lt;p class=&quot;anotacao&quot;&gt;CSS &eacute; muito legal!&lt;/p&gt;</code></pre>
+
+                    <p>CSS: </p>
+                    <pre><code>.anotacao{
+    color: red;
+}</code></pre>
+
+                    <p>Dessa forma, todos os elementos HTML que tiverem definido o valor de <code>class</code> para
+                        <code>anotacao</code> deverão receber a estilização (nesse exemplo: a cor do texto será
+                        vermelha).
+                    </p>
+
+                    <h4 id="definindo_seletores_para_identicadores">Definindo seletores para identicadores únicos</h4>
+
+                    <p>Podemos utilizar regras que se apliquem ao atributo <code>id</code> definido em elementos HTML.
+                        Para isso, utilizaremos o <code>#</code> (cerquilha) + o <code>nome do identificador</code>,
+                        como no
+                        exemplo:</p>
+
+                    <p>HTML: </p>
+                    <pre><code>&lt;p id=&quot;recepcao&quot;&gt;Bem vindo, Biro-Biro!&lt;/p&gt;</code></pre>
+
+                    <p>CSS: </p>
+                    <pre><code>#recepcao{
+    margin: 20px;
+}</code></pre>
+
+                    <p>Dessa forma, o elemento HTML que tiver definido o valor de <code>id</code> para
+                        <code>recepcao</code> deverá receber essa estilização (nesse exemplo: a margem será de 20
+                        pixels).
+                        Lembre-se que não é possível definir dois ou mais elementos HTML com o mesmo identiicador
+                        (<code>id</code>) dentro de um mesmo documento, por isso essa regra deve ser aplicada a somente
+                        um
+                        elemento.
+                    </p>
+
+                    <h4 id="definindo_seletores_de_atributo">Definindo seletores de atributo</h4>
+
+                    <p>Também podemos definir seletores que corespondam a elementos com atributos específicos. Para
+                        isso,
+                        utilizaremos a sintaxe <code>[atributo=valor]</code> precedido pelo
+                        <code>nome do elemento</code>,
+                        como no
+                        exemplo:</p>
+
+                    <p>HTML: </p>
+                    <pre><code>&lt;input type=&quot;password&quot;&gt;</code></pre>
+
+                    <p>CSS: </p>
+                    <pre><code>input[type="password"]{
+    background-color: #222;
+}</code></pre>
+
+                    <p>Dessa forma, todos os elementos <code>input</code> que possuirem o atributo <code>type</code> com
+                        o
+                        valor <code>password</code> deveram receber essa estilização (nesse exemplo: a cor de fundo será
+                        <code>#222</code>).
+                    </p>
+
+                    <h4 id="definindo_seletores_compostos">Definindo seletores compostos</h4>
+
+                    <p>Outra maneira de definir regras mais complexas para os seletores é a utilização de seletores
+                        compostos. Podemos definir um conjunto aninhado de seletores, aplicando as regras somente aos
+                        seletores que seguirem a ordem definida,
+                        como no exemplo:</p>
+
+                    <p>HTML: </p>
+                    <pre><code>&lt;p&gt;Este paragrafo n&atilde;o ser&aacute; estilizado&lt;/p&gt;
+&lt;footer&gt;
+    &lt;p&gt;Este paragr&aacute;fo ganhar&aacute; uma borda&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+
+                    <p>CSS: </p>
+                    <pre><code>footer p{
+    border: 2px solid grey;
+}</code></pre>
+
+                    <p>Nesse exemplo, apenas o segundo parágrafo será estilizado pois está aninhado dentro do elemento
+                        <code>footer</code>. Para criar essa regra específica, definimos o seletor composto no CSS na
+                        mesma
+                        ordem de encapsulamento do HTML (primeiro o elemento <code>footer</code> e dentro dele o
+                        elemento
+                        <code>p</code>). Dessa forma, o segundo parágrafo, nesse exemplo, ganhará uma borda cinza de 2
+                        pixels.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Regras de Precedência
+                </div>
+                <div class="card-body">
+
+                    <p> As regras de precedência no CSS seguem a seguinte ordem, do menos importante para o mais
+                        importante:
+                    <ol>
+                        <li>Ordem de leitura (primeiras regras primeiro)</li>
+                        <li>Seletores universais; ex: <code>*{ }</code></li>
+                        <li>Seletores de elementos; ex: <code>p{ }</code></li>
+                        <li>Seletores de classe, ex: <code>.minhaclasse{ }</code></li>
+                        <li>Seletor de atributo, ex: <code>input[type="text"]{ }</code></li>
+                        <li>Pseudo-seletor, ex.: <code>div:hover{ }</code></li>
+                        <li>Seletor de ID, ex.: <code>#minhaid{ }</code></li>
+                        <li>Atributo style do HTML, ex.: <code>style="color: blue;"</code></li>
+                        <li>Anotação <code>!important</code></li>
+                    </ol>
+                    </p>
+
+                </div>
+            </div>
+
+            <h3 id="topicos_adicionais">Tópicos Adicionais</h3>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Exemplo da Aula
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><a href="./exemplos/exemplo_css/" target="_blank">Exemplo de uso do CSS</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Ferramentas e Material
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><a href="https://www.w3schools.com/cssref" target="_blank">Lista de propriedades CSS
+                                (inglês)</a></li>
+                        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Reference"
+                                target="_blank">Lista de propriedades CSS - MDN (português)</a></li>
+                        <li><a href="https://cssgradient.io/" target="_blank">Criador de Gradiente CSS</a></li>
+                        <li><a href="https://fonts.google.com/?category=Sans+Serif" target="_blank">Repositório de
+                                Fontes - Google</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 id="maoNaMassa">Mão na Massa</h3>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Exercício 07: Criando índice
+                </div>
+                <div class="card-body">
+                    <p>Copie o código HTML desta página (Aula 5). Observe a caixa de índice, logo após o título H2:</p>
+
+                    <pre><code>&lt;!-- BODY --&gt;
+&lt;div class=&quot;container&quot;&gt;
+
+    &lt;h2&gt;Aula 05 - Atributos Globais&lt;/h2&gt;
+
+    &lt;!-- INDICE --&gt;
+    &lt;div class=&quot;card&quot; hidden&gt;
+        &lt;div class=&quot;card-header dark-color&quot;&gt;
+            &Iacute;ndice
+        &lt;/div&gt;
+        &lt;div class=&quot;card-body&quot;&gt;
+            &lt;!-- INSIRA AQUI O C&Oacute;DIGO DO SEU &Iacute;NDICE --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+
+                    <p>Repare que o elemento <code>div</code> logo abaixo do comentário
+                        <code>&lt;!-- INDICE --&gt;</code>
+                        possui o atributo binário <code>hidden</code>. Esse atributo esconde todo o elemento da
+                        renderização
+                        no navegador. Você deve remover esse elemento e inserir abaixo do código
+                        <code>&lt;!-- INSIRA AQUI O C&Oacute;DIGO DO SEU &Iacute;NDICE --&gt;</code> um índice para a
+                        página. Este índice deverá conter um link (do tipo âncora) para cada título do tipo
+                        <code>h3</code>
+                        e <code>h4</code> na página. Não esqueça que nenhum desses elementos possui um identificador
+                        definido, você irá definir um <code>id</code> para cada um deles. O índice deverá ser
+                        apresentado
+                        através de uma <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/ol"
+                            target="_blank">Lista Ordenada</a>.</p>
+
+                    <p>Após realizar todas as alterações, envie o arquivo HTML editado ao professor.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Exercício 08: Estilo no style
+                </div>
+                <div class="card-body">
+                    <p>Salve e edite o código <a href="../exercicios/13/" target="_blank">desta página</a> fazendo as
+                        seguintes alterações no estilo, usando o elemento <code>style</code>:
+                    <ul>
+                        <li>A margem do elemento <code>body</code> deve ser igual a <code>0</code>;</li>
+                        <li>A família de fontes usada em todo documento deve ser igual a <code>sans</code></li>
+                        <li>A cor de fundo do <code>header</code> e <code>footer</code> devem ser iguais a
+                            <code>#333</code> e a cor da letra deve ser igual a <code>white</code></li>
+                        <li>O espaçamento interno do <code>header</code> e <code>footer</code> devem ser iguais a
+                            <code>1rem</code>, com o texto centralizado;</li>
+                        <li>O título principal (<code>h1</code>) e os links da página devem estar em letras
+                            maiúsculas (não alterar diretamente o texto);</li>
+                        <li>Deve ser removido qualquer marcador ao lado dos links;</li>
+                        <li>A altura das linhas da seção principal deve ser igual a <code>1.5rem</code>;</li>
+                        <li>Cada seção deve ter margem externa de <code>2rem</code>;</li>
+                        <li>Os parágrafos dentro de cada <code>section</code> devem ter o texto justificado;</li>
+                        <li>Os títulos <code>h2</code> devem ter uma borda inferior com o seguinte valor:
+                            <code>1px solid red</code> e o texto deve estar na cor vermelha;</li>
+                    </ul>
+                    </p>
+
+                    <p>Após realizar todas as alterações, envie o arquivo HTML editado ao professor.</p>
+                </div>
+            </div>
+
+            <h3 id="exercicio_complementares">Exercício Complementares</h3>
+
+            <div class="card">
+                <div class="card-header dark-color">
+                    Adicional 12: Estilizando notícias
+                </div>
+                <div class="card-body">
+                    <p>Usando esta <a href="../exercicios/14/" target="_blank">template HTML</a>, estilize o documento
+                        para que fique <a href="../exercicios/14/mockup.png" target="_blank">desta forma</a>.</p>
+                    <p>Utilize as seguintes recomendações:
+                    <ul>
+                        <li>Fonte Roboto, encontrada no repositório da Google;</li>
+                        <li>Títulos<ul>
+                                <li>Cor da fonte: rebeccapurple;</li>
+                                <li>Tamanho da fonte: 1rem;</li>
+                            </ul>
+                        </li>
+                        <li>Rodapé com data:<ul>
+                                <li>Cor da fonte: #555;</li>
+                                <li>Tamanho da fonte: 0.8rem;</li>
+                            </ul>
+                        </li>
+                        <li>Altura da imagem: 30rem;</li>
+                        <li>Toda a página com texto alinhado ao centro;</li>
+                        <li>Primeiro artigo deve ter as seguintes especificações:
+                            <ul>
+                                <li>Altura da imagem: 50rem;</li>
+                                <li>Tamanho do título: 2rem;</li>
+                                <li>Tamanho da manchete: 1.5rem;</li>
+                                <li>Margem: 3rem;</li>
+                                <li>Espaçamento Interno: 3rem;</li>
+                                <li>Cor de fundo: #EEE;</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </p>
+                    <p>Ao final do projeto, compacte e envie ao professor.</p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+    integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"
+    integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+</html>

@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    font-family: 'Sen', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.container{
+    border-top: 1px solid #212121;
+    border-bottom: 1px solid #212121;
+    margin: 1rem;
+    background-color: #b0ca9c;
+}
+
+header{
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+header img{
+    width: 2rem;
+    height: 2rem;
+}
+
+header h1{
+    padding: 1rem;
+    font-size: 1rem;
+    color: white;
+}
+
+header{
+    background-color: #212121;
+    padding: 0.5rem;
+}
+
+nav{
+    background-color: #558b2f;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav li{
+    list-style-type: none;
+    margin-right: 2rem;
+}
+
+nav li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+nav li a:hover{
+    color: rgb(0, 56, 0);
+}
+
+main section{
+    padding: 2rem;
+    text-align: justify;
+}
+
+footer{
+    color: white;
+    padding: 2rem;
+    background-color: #558b2f;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer section{
+    width: 20rem;
+    padding-right: 2rem;
+    text-align: center;
+}
+
+footer section h2{
+    border-bottom: 1px solid white;
+}
+
+footer li{
+    list-style-type: square;
+}
+
+footer a{
+    font-weight: bold;
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover{
+    color: rgb(0, 56, 0);
+}

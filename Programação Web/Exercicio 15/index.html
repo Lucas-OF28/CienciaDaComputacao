@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio_15</title>
+</head>
+<body>
+    <header>
+        <div id="form">
+           <input type="name" placeholder="Time 1" id = "t1" />
+           <input type="name" placeholder="Time 2" id = "t2"/>
+           <button id="btn" onClick="gerarpartida()"> Gerar </button>
+           <h1>Resultados</h1>
+           <div id="tab"> </div>  
+        </div>
+    </header>
+
+</body>
+<script>
+    var t1,t2
+    var v1,v2
+    function gerarpartida(){
+        t1 = document.getElementById("t1").value;
+        t2 = document.getElementById("t2").value;
+        v1=Math.floor(Math.random() * 10);
+        v2=Math.floor(Math.random() * 10);
+        setTimeout(temp,5000)
+    }
+    function temp(){
+        var stop = document.createElement("P");
+        stop.innerHTML = t1+" "+v1+" X "+v2+" "+t2
+        document.getElementById("tab").appendChild(stop);
+       console.log(t1+" "+v1+" X "+v2+" "+t2)
+     }
+</script>
+</html>

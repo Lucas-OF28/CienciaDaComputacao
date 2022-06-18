@@ -1,0 +1,19 @@
+@media screen and(max-width: 600px){
+    .mensagem .conteudo {
+        margin-left: 2rem;
+        order: 1;
+    }
+    header{
+        flex-flow: column;
+    }
+    
+    header ul{
+        display: block;
+    }
+    
+    header ul li{
+        margin: 2rem;
+        text-align: center;
+    }
+}
+
